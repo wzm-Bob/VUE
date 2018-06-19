@@ -1,23 +1,7 @@
 // import {getUser} from '../service/getData'
-
-import {
-    REDUCE_COUNT
-  } from "./mutation_type";
-
-
+import request from 'superagent';
+import { register } from "./mutation_type";
   export default {
-   /*  async getUserInfo({ commit,state}) {
-      let res = await getUser();
-      commit(GET_USERINFO, res)
-    }, 
-    提交传入类型和payload paylaod数据异步获取  方法名只是调用 mapactions用到
-    */
-
-   /*  testAction({ commit,state }) {
-        let res = { amount:20}
-        commit('REDUCE_COUNT',res)
-
-     } */
      REDUCE_COUNT(context) {
  let res = {
    amount: 20
@@ -25,7 +9,34 @@ import {
        context.commit('REDUCE_COUNT', res)
 
 
-     }
+     },
+      register({
+         commit
+       }, payload) {
+         debugger
+         return new Promise((resolve, reject) => {
+           request
+             .post('https://douban.herokuapp.com/user/')
+             .send({
+               email: payload.email,
+               pass: payload.pass,
+               name: payload.name
+             })
+             .then(res => {
+               debugger
+              /*  commit({
+                 type: 'register',
+                 email: res.body.email,
+                 token: res.body.token,
+                 name: res.body.name
+               }) */
+               commit(register, res)
+               resolve(res)
+             }, err => {
+               reject(err)
+             })
+         })
+       }
 
   }
  /*  

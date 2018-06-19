@@ -1,5 +1,5 @@
 <template>
-  <div class="login-form">
+  <form  class="login-form" method="get" @submit.prevent="onSubmit()">
     <div class="g-form">
       <div class="g-form-line">
         <span class="g-form-label">用户名：</span>
@@ -17,21 +17,31 @@
       </div>
       <div class="g-form-line">
         <div class="g-form-btn">
-          <Button type="primary" @click="onLogin" long style="width: 280px">SUBMIT</Button>
-        </div>
-      </div>
+         <button
+          class="submit"
+          type="submit"
+          :disabled="isDisabled"
+          style="width:280px"
+          :class="{disabled: isDisabled}"
+          >
+          {{loginState}}
+        </button>
+        </div>       
       <p>{{ errorText }}</p>
     </div>
   </div>
+  </form>
 </template>
 
 <script>
 export default {
   data () {
     return {
+      loginState: '登录',
       usernameModel: '',
       passwordModel: '',
-      errorText: ''
+      errorText: '',
+      isDisabled: false
     }
   },
   computed: {
@@ -76,11 +86,22 @@ export default {
     }
   },
   methods: {
-    onLogin () {
-      if (!this.userErrors.status || !this.passwordErrors.status) {
+    beforeSubmit: function () {
+      debugger
+      
+      // console.log('Submiting...')
+      this.isDisabled = true
+      this.loginState = '正在登录...'
+      
+    },
+    onSubmit: function () {
+      // Disabled submit button
+       if (!this.userErrors.status || !this.passwordErrors.status) {
         this.errorText = '部分选项未通过'
-      }
-      else {
+        return 
+      }else{
+      this.beforeSubmit()
+      // Login...
         this.errorText = ''
         this.$http.get('api/login')
         .then((res) => {
@@ -106,4 +127,5 @@ export default {
 .g-form-btn{padding-top: 15px;}
 .g-form-line span.g-form-label{display: inline-block;padding: 5px 0;}
 .g-form-error{height: 18px;display: inline-block;line-height: 18px;color:#f00;width: 100%;}
+.submit{background: #4bb4ff;color: #fff;font-size: 20px;}
 </style>

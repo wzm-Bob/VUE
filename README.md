@@ -1,6 +1,6 @@
-# 一个使用vuejs搭建的售卖平台demo
+# vue实战使用
 
-> 一个使用vuejs搭建的售卖平台demo
+> vue实战使用
 
 ## Build Setup
 

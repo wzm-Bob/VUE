@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 const IndexPage = r => require.ensure([], () => r(require('../pages/index')), 'IndexPage')
+const register = r => require.ensure([], () => r(require('../pages/register')), 'register')
 const NewView = r => require.ensure([], () => r(require('../pages/newView')), 'NewView')
 const DetailPage = r => require.ensure([], () => r(require('../pages/detail')), 'DetailPage')
 const OrderListPage = r => require.ensure([], () => r(require('../pages/orderList')), 'OrderListPage')
@@ -28,6 +29,10 @@ export default new VueRouter({
     {
       path: '/newView',
       component: NewView
+    },
+    {
+      path: '/register',
+      component: register
     },
     {
       path: '/detail',

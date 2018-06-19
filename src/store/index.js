@@ -9,7 +9,10 @@ Vue.use(Vuex)
 const state =  {
     count: [20, 45, 67],
     num: 9999,
-    events:'测试'
+    events:'测试',
+    login_email: '',
+    login_token: '',
+    login_name: ''
   }
 
 

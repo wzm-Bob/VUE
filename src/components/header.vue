@@ -41,12 +41,9 @@
       <my-dialog :is-show="isShowAboutDialog" @on-close="closeDialog('isShowAboutDialog')">
       <p>碍因素具运力的客观、深策依据。 </p>
     </my-dialog>
-    
+    <!-- 方法名 属性名要和子组件里面对应上 -->
     <my-dialog :is-show="isShowLogDialog" @on-close="closeDialog('isShowLogDialog')">
       <log-form @has-log="onSuccessLog"></log-form>
-    </my-dialog>
-    <my-dialog :is-show="isShowRegDialog" @on-close="closeDialog('isShowRegDialog')">
-      <reg-form></reg-form>
     </my-dialog>
    </header>
 </template>
@@ -54,12 +51,10 @@
 <script>
 import  Dialog  from "./base/dialog"
 import LogForm from './logForm'
-import RegForm from './regForm'
 export default {
  components: {
     MyDialog: Dialog,
-    LogForm,
-    RegForm
+    LogForm
   },
 methods: {
     aboutClick () {
@@ -69,7 +64,8 @@ methods: {
       this.isShowLogDialog = true
     },
     regClick () {
-      this.isShowRegDialog = true
+      //this.isShowRegDialog = true
+      this.$router.push({path:'/register'})
     },
     closeDialog (attr) {
       this[attr] = false
@@ -89,7 +85,6 @@ methods: {
       theme1: 'dark',
       isShowAboutDialog: false,
       isShowLogDialog: false,
-      isShowRegDialog: false,
       username: '',
       list:[
                     {text:'内容管理', hasSub:false,type:'ios-paper'},

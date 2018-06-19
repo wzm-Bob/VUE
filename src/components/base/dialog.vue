@@ -28,7 +28,7 @@ export default {
     }
   },
   methods: {
-    // 这里的this统一指向的是vue
+    // 这里的this统一指向的是vue 通过事件向父元素传递  子组件中的事件出
     closeMyself () {
       this.$emit('on-close')
     }

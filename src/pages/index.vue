@@ -8,13 +8,15 @@
         :dots="setting.dots"
         :radius-dot="setting.radiusDot"
         :trigger="setting.trigger"
-        :arrow="setting.arrow">
+        :arrow="setting.arrow"
+        @on-change="sss()">
             <CarouselItem v-for="item in value3">
                 <div class="demo-carousel"><img :src="item.src" style="width:100%;height:410px;" alt=""></div>
             </CarouselItem>
       </Carousel>
    </section>
    <footer>
+    <DatePicker size="small" type="date" placeholder="Select date"></DatePicker>
     <h2>知识改变人的命运  扶贫共奔和谐之路</h2>
 		<p class="zhichi-company">甘肃万维软件研发公司技术支持<span class="copyright-info">Copyright@    2010-2016</span></p>	
 		<p class="english-info">wanwei Poverty Reduction Network  Information Center  All  Righ</p>	
@@ -38,7 +40,10 @@ export default {
         },
   methods: {
      search:function(params) {
-       alert(999)
+     
+     },
+     sss:function (params) {
+        
      }
   },
  
@@ -72,7 +77,7 @@ export default {
       setting: {
           autoplay: true,
           autoplaySpeed: 2000,
-          dots: 'inside',
+          dots: 'none',
           radiusDot: true,
           trigger: 'click',
           arrow: 'hover'
