@@ -16,3 +16,4 @@ export function loginByUsername(pageObj) {
   });
 }
 
+// export const requestUsers = params => axios.get(`${base}/users`).then(res => res.data)

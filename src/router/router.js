@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+const loginWrap = r => require.ensure([], () => r(require('../pages/loginwrap')), 'loginWrap')
 const IndexPage = r => require.ensure([], () => r(require('../pages/index')), 'IndexPage')
 const register = r => require.ensure([], () => r(require('../pages/register')), 'register')
 const NewView = r => require.ensure([], () => r(require('../pages/newView')), 'NewView')
@@ -18,10 +19,15 @@ export default new VueRouter({
   mode: 'hash',
   routes: [{
       path: '/',
-      name: 'IndexPage',
+      name: 'loginWrap',
      // redirect: '/',
-      component: IndexPage
+      component: loginWrap
     },
+    {
+        path: '/IndexPage',
+         name: 'IndexPage',
+        component: IndexPage
+      },
     {
       path: '/orderList',
       component: OrderListPage

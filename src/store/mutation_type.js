@@ -1,5 +1,5 @@
-export const REDUCE_COUNT = 'REDUCE_COUNT'
-export const register = 'register'
+export const login = 'login'
+export const LoginByUsername = 'LoginByUsername'
 
 
 
