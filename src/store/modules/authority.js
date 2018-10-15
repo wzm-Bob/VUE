@@ -55,7 +55,7 @@ const permission = {
         } = data
         let tempRouters
         if (roles.indexOf('admin') >= 0) {
-          tempRouters = custormRoute
+          tempRouters = custormRoute  
         } else {
           tempRouters = filterCustormRoute(custormRoute, roles)
         }

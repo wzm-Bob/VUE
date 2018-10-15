@@ -1,9 +1,6 @@
 <template>
-
         <div >
-         
-            <Tabs value='account'>
-                 
+            <Tabs value='account'>    
               <TabPane label='账户密码登录' name='account'>
                   <Form ref='account' 
           :model='formLogin'
@@ -39,7 +36,6 @@
 
           </Form>
               </TabPane>
-
               <TabPane label='手机号码登录' name='mobile'>
                   <Form ref='mobile' 
           :model='formLogin'
@@ -76,7 +72,6 @@
                 <span class='forget'>
                   <router-link to='/IndexPage'>忘记密码</router-link>
                 </span>
-
                 </Col>
               </Row>
             </FormItem>
