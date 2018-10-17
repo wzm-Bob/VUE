@@ -7,10 +7,10 @@
             <Input v-model='formRegister.email' placeholder='邮箱'></Input>
         </FormItem>
         <FormItem prop='password'>
-            <Input v-model='formRegister.password' placeholder='密码'></Input>
+            <Input type="password" v-model='formRegister.password' placeholder='密码'></Input>
         </FormItem>
         <FormItem prop='repeatpassword'>
-            <Input v-model='formRegister.repeatpassword' placeholder='确认密码'></Input>
+            <Input type="password" v-model='formRegister.repeatpassword' placeholder='确认密码'></Input>
         </FormItem>
        
         <FormItem>
@@ -215,7 +215,7 @@ export default {
     },
     onSuccess(res) {
       debugger
-       this.$router.push({ name: 'registerSuccess' });
+       this.$router.push('/registerSuccess');
     },
     onError(err) {
        this.$Modal.error({

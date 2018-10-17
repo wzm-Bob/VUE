@@ -15,7 +15,11 @@ export const commonRoute = [{
       {
         path: 'registerWrap',
         component: r => require.ensure([], () => r(require('../pages/registerwrap')), 'registerWrap')
-      }
+      },
+         {
+           path: 'registerSuccess',
+           component: r => require.ensure([], () => r(require('../pages/registersuccess')), 'registerSuccess')
+         }
     ]
   },
   {
