@@ -3,10 +3,10 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-export const commonRoute = [{
+ export const commonRoute = [
+   {
     path: '/',
     name: 'loginLayout',
-    redirect: '/loginWrap',
     component: r => require.ensure([], () => r(require('../pages/loginlayout')), 'loginLayout'),
     children: [{
         path: 'loginWrap',
@@ -54,7 +54,7 @@ export const commonRoute = [{
 export default new Router({
   routes: commonRoute
 })
-export const custormRoute = [{
+/*export const custormRoute = [{
   path: '/Layout',
   component: r => require.ensure([], () => r(require('../pages/registerwrap')), 'Layout'),
   redirect: '/Layout/orderList',
@@ -63,4 +63,4 @@ export const custormRoute = [{
     title: 'orderList',
     roles: ['admin', 'user'] // you can set roles in root nav
   }
-}]
+}]*/

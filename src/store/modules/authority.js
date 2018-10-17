@@ -50,6 +50,7 @@ const permission = {
       commit
     }, data) {
       return new Promise(resolve => {
+        debugger
         const {
           roles
         } = data
