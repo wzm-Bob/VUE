@@ -58,14 +58,5 @@ export const custormRoute = [{
   meta: {
     title: 'orderList',
     roles: ['admin', 'user'] // you can set roles in root nav
-  },
-  children: [{
-    path: 'orderList',
-    component: r => require.ensure([], () => r(require('../pages/orderList')), 'orderList'),
-    name: 'orderList',
-    meta: {
-      title: 'orderList',
-      roles: ['admin'] // or you can only set roles in sub nav
-    }
-  }]
+  }
 }]

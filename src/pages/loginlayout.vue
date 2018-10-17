@@ -18,15 +18,14 @@
     </Layout>  
       <Footer>
         <div class="index__links___1TMBe">
-          <a target="_self" href="">帮助</a>
-          <a target="_self" href="">隐私</a>
-          <a target="_self" href="">条款</a>
+          <a target="_self" href="#">帮助</a>
+          <a target="_self" href="#">隐私</a>
+          <a target="_self" href="#">条款</a>
         </div>
         <div class="index__copyright___3hvsv">Copyright
           <i class="anticon anticon-copyright"></i> 2018 蚂蚁金服体验技术部出品</div>
       </Footer>
     </Layout>
-   
   </div>
 </template>
 <script>

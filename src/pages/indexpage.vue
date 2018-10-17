@@ -23,7 +23,6 @@
       </Sider>
       <Layout>
         <Header :style='{padding: 0}' class='layout-header-bar'>
-          <!--<Icon @click.native='collapsedSider' :class='rotateIcon' :style="{margin: '0 20px'}" type='md-menu' size='24'>777</Icon>-->
           <Headers @FedLogOut="LOGOUT" msg='父组件传给子组件 子组件属性接受' @sayhello='showMs'></Headers>
         </Header>
         <div>

@@ -88,20 +88,24 @@
             <Col span='18'>
             <span>其他登录方式</span>
             <span>
-              <router-link to='/IndexPage'>
+              <a @click="See('https://github.com/wzm-Bob/VUE.git')">
+               <Icon type='social-tux'></Icon>
+              </a>
+              <!-- 这里跳外站链接不能用router-link  -->
+              <!-- <router-link @click="See('https://github.com/wzm-Bob/VUE.git')">
                 <Icon type='social-tux'></Icon>
-              </router-link>
+              </router-link> -->
             </span>
-            <span>
-              <router-link to='/IndexPage'>
+             <span>
+              <a @click="See('https://github.com/wzm-Bob/VUE.git')">
                 <Icon type='social-chrome'></Icon>
-              </router-link>
+              </a>
             </span>
             <span>
-              <router-link to='/IndexPage'>
+              <a @click="See('https://github.com/wzm-Bob/VUE.git')">
                 <Icon type='social-python'></Icon>
-              </router-link>
-            </span>
+              </a>
+            </span> 
             </Col>
             <Col span='6'>
             <span class='forget'>
@@ -207,6 +211,9 @@ export default {
   },
 
   methods: {
+    See(e){
+       window.location.href = e;
+    },
     onGetCaptcha() {
       const TIME_COUNT = 59;
       if (!this.timer) {
@@ -425,11 +432,6 @@ export default {
   vertical-align: top;
   margin-right: 16px;
 }
-
-.add__margin {
-  /* margin-bottom: 24px; */
-}
-
 .title___2h165 {
   font-size: 33px;
   color: rgba(0, 0, 0, 0.85);

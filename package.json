@@ -1,13 +1,13 @@
 {
-  "name": "vue-demo-sale-platform",
+  "name": "vue-so-easy",
   "version": "2.0.0",
-  "description": "a demo sale platform use vue2.0",
-  "author": "fishenal <yu_dong_han@hotmail.com>",
+  "description": "a demo for vue",
+  "author": "wwwwzzzzmmmm",
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js"
   },
-  "repository": "https://github.com/fishenal/Vuejs-SalePlatform",
+  "repository": "https://github.com/wzm-Bob/VUE.git",
   "dependencies": {
     "iview": "^2.14.3",
     "lodash": "^4.16.4",
