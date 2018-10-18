@@ -37,9 +37,9 @@ export default {
     methods: {
         logout() {
             debugger
-
             localStorage.removeItem("user");
             localStorage.removeItem("password");
+            sessionStorage.removeItem("account");
             this.$router.push({ path: '/loginWrap' })
         },
         hello() {

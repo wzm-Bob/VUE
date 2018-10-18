@@ -122,6 +122,7 @@
 <script>
 //Alt+Shift+F格式化
 export default {
+  name:'loginWrap',
   data() {
     const validateUser = (rule, value, callback) => {
       if (value === "") {

@@ -37,6 +37,7 @@ import sideMenuItem from "../components/menuItem.vue";
 import Headers from "./header/header"
 //注意引入的单个名字首字母要大写
 export default {
+  name:'IndexPage',
   components: { 
     sideMenuItem,
     Headers

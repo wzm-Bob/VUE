@@ -9,6 +9,7 @@ import {
  * @param route
  */
 function hasAuth(roles, route) {
+  debugger
   if (route.meta && route.meta.roles) {
     return roles.some(role => route.meta.roles.indexOf(role) >= 0)
   } else {
@@ -22,6 +23,7 @@ function hasAuth(roles, route) {
  * @param roles
  */
 function filterCustormRoute(custormRoute, roles) {
+  debugger
   const tempRouters = custormRoute.filter(route => {
     if (hasAuth(roles, route)) {
       if (route.children && route.children.length) {
@@ -41,6 +43,7 @@ const permission = {
   },
   mutations: {
     SET_ROUTERS: (state, routers) => {
+      debugger
       state.addRouters = routers
       state.routers = commonRoute.concat(routers)
     }

@@ -30,6 +30,9 @@ const mutations = {
     state.currentAuthority = payload.currentAuthority
     state.status = payload.status
   },
+   SET_ROLES: (state, roles) => {
+     state.roles = roles
+   }
   
 }
 
