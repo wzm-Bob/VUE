@@ -25,7 +25,7 @@
         <Header :style='{padding: 0}' class='layout-header-bar'>
           <Headers @FedLogOut="LOGOUT" msg='父组件传给子组件 子组件属性接受' @sayhello='showMs'></Headers>
         </Header>
-        <div>
+        <div style="marginTop:65px">
           <router-view></router-view>
         </div>
       </Layout>
@@ -113,6 +113,13 @@ export default {
 };
 </script>
 <style>
+.ivu-layout-header{
+  position: fixed;
+    padding: 0px;
+    width: 83%;
+    top: 0;
+    z-index: 9999;
+}
 .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu) {
   background: #1890ff;
   color: #fff;
