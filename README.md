@@ -1,4 +1,4 @@
-# vue实战使用
+# 该项目不再更新 将使用vue-cli3.0+typescript开发   请移步vueTs
 
 > vue实战使用
 
